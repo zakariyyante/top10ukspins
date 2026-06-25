@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0118; /* Deepest purple/black */
+  --foreground: #ffffff;
+  --card-bg: #15052d; /* Dark purple for cards */
+  --primary: #ffd700; /* Gold */
+  --accent: #9d50bb; /* Vibrant purple from logo */
+  --silver: #e0e0e0;
+  --uk-red: #cf142b;
+  --uk-blue: #00247d;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Inter', sans-serif;
+}
+
+@layer utilities {
+  .gold-text {
+    @apply bg-gradient-to-b from-[#fff7ad] via-[#ffd700] to-[#b8860b] bg-clip-text text-transparent;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+  }
+
+  .silver-text {
+    @apply bg-gradient-to-b from-[#ffffff] via-[#c0c0c0] to-[#808080] bg-clip-text text-transparent;
+  }
+
+  .purple-glow {
+    box-shadow: 0 0 30px rgba(157, 80, 187, 0.3);
+  }
+
+  .gold-border {
+    border: 1px solid transparent;
+    background: linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
+                linear-gradient(to bottom, #fff7ad, #ffd700, #b8860b) border-box;
+  }
+
+  .metallic-button {
+    background: linear-gradient(to bottom, #fff7ad 0%, #ffd700 50%, #b8860b 100%);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3), inset 0 1px 1px rgba(255,255,255,0.5);
+  }
+
+  .casino-gradient {
+    background: linear-gradient(135deg, #15052d 0%, #2a0a5a 100%);
+  }
+
+  .roulette-bg {
+    background-image: radial-gradient(circle at center, rgba(157, 80, 187, 0.1) 0%, transparent 70%);
+  }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.shimmer-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-effect::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: shimmer 2s infinite;
+}

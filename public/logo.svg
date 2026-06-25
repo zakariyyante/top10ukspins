@@ -1,0 +1,13 @@
+<svg width="640" height="160" viewBox="0 0 640 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Shield Icon -->
+  <path d="M40 20C40 20 40 40 40 60C40 100 80 130 80 130C80 130 120 100 120 60C120 40 120 20 120 20H40Z" fill="#ff8c00"/>
+  <path d="M80 40L65 75H80L70 110L95 65H80L90 40H80Z" fill="white"/>
+  
+  <!-- Wordmark -->
+  <text x="140" y="85" font-family="Arial" font-weight="900" font-size="60" fill="#ff8c00">SPINS</text>
+  <text x="330" y="85" font-family="Arial" font-weight="900" font-size="60" fill="#ffd700">UK</text>
+  <text x="430" y="85" font-family="Arial" font-weight="900" font-size="60" fill="white">CASINO</text>
+  
+  <!-- Sub-line -->
+  <text x="140" y="120" font-family="Arial" font-weight="400" font-size="14" fill="rgba(255,255,255,0.6)" letter-spacing="4">TOP10UKSPINS.COM</text>
+</svg>
