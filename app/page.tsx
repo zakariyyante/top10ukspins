@@ -5,6 +5,7 @@ import AboutSection from "./components/AboutSection";
 import { brands } from "./data/brands";
 import MobileModal from "./components/MobileModal";
 import { Suspense } from "react";
+import { headers } from "next/headers";
 
 interface PageProps {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
@@ -13,9 +14,22 @@ interface PageProps {
 export default async function Home({ searchParams }: PageProps) {
   const params = await searchParams;
   const gclidValue = typeof params.gclid === "string" ? params.gclid : undefined;
+  
+  const headersList = await headers();
+  const userAgent = headersList.get("user-agent") || "";
+  const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
 
-  // Sort brands by rating descending
-  const sortedBrands = [...brands].sort((a, b) => b.rating - a.rating);
+  // Filter brands: isMobile brands only shown if user is on mobile AND has gclid
+  const filteredBrands = brands.filter(brand => {
+    if (brand.isMobile) {
+      return isMobileDevice && gclidValue;
+    }
+    // brands with isMobile: false are shown to everyone
+    return true;
+  });
+
+  // Sort filtered brands by rating descending
+  const sortedBrands = [...filteredBrands].sort((a, b) => b.rating - a.rating);
 
   return (
     <div className="flex flex-col">
@@ -52,9 +66,9 @@ export default async function Home({ searchParams }: PageProps) {
       
       <AboutSection />
 
-      {/* Mobile Popup Modal */}
+      {/* Mobile Popup Modal - Pass isMobileDevice to ensure it only shows on mobile */}
       <Suspense fallback={null}>
-        <MobileModal brands={brands} gclidValue={gclidValue} />
+        <MobileModal brands={brands} gclidValue={gclidValue} isMobileDevice={isMobileDevice} />
       </Suspense>
     </div>
   );
