@@ -20,6 +20,16 @@ export const brands: Brand[] = [
     isMobile: true,
     votes: 1340,
   },
+  {
+    id: "spinyrush",
+    name: "SpinyRush",
+    logo: "/brands/SPINY.svg",
+    rating: 9.0,
+    bonus: "725% up to £ 6250 + 425FS",
+    url: "https://spinyrush777.net/dqrrw9cnz?subid=SpinyRush-UK01ZZ&visit_id=",
+    isMobile: true,
+    votes: 1105,
+  },
   
   {
     id: "spinpolo",
