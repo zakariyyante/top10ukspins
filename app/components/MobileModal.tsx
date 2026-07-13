@@ -20,8 +20,12 @@ const MobileBrandCard = ({ brand, gclidValue, label }: { brand: Brand; gclidValu
 
   const finalUrl = buildUrl(brand.url, gclidValue);
 
-  const handleCardClick = () => {
-    track("Brand Click", { brand: brand.name, source: "mobile-modal" });
+  const handleCardClick = (source: string = "mobile_card_body") => {
+    track("Unique Brand Click", { 
+      brand: brand.name,
+      location: "mobile_modal",
+      click_source: source 
+    });
 
     if (typeof window !== "undefined" && window.gtag_report_conversion) {
       window.gtag_report_conversion(finalUrl);
@@ -33,7 +37,7 @@ const MobileBrandCard = ({ brand, gclidValue, label }: { brand: Brand; gclidValu
   return (
     <div 
       className="relative flex flex-col overflow-visible rounded-[2rem] bg-[#110625] border border-white/5 p-4 mb-4 shadow-2xl"
-      onClick={handleCardClick}
+      onClick={() => handleCardClick("mobile_card_click")}
     >
       {/* Brand Badge */}
       {label && (
@@ -85,7 +89,7 @@ const MobileBrandCard = ({ brand, gclidValue, label }: { brand: Brand; gclidValu
           className="w-full rounded-xl bg-gradient-to-r from-[#00d2ff] via-[#3a7bd5] to-[#9d50bb] py-3.5 text-xs font-black uppercase tracking-widest text-white shadow-[0_0_15px_rgba(0,210,255,0.2)]"
           onClick={(e) => {
             e.stopPropagation();
-            handleCardClick();
+            handleCardClick("mobile_cta_button");
           }}
         >
           Play At {brand.name}

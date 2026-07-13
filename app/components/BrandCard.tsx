@@ -24,8 +24,12 @@ export default function BrandCard({ brand, gclidValue, rank }: BrandCardProps) {
 
   const finalUrl = buildUrl(brand.url, gclidValue);
 
-  const handleCardClick = () => {
-    track("Brand Click", { brand: brand.name });
+  const handleCardClick = (source: string = "card_body") => {
+    track("Unique Brand Click", { 
+      brand: brand.name,
+      location: "desktop_grid",
+      click_source: source 
+    });
 
     if (typeof window !== "undefined" && window.gtag_report_conversion) {
       window.gtag_report_conversion(finalUrl);
@@ -46,7 +50,7 @@ export default function BrandCard({ brand, gclidValue, rank }: BrandCardProps) {
   return (
     <div 
       className="casino-gradient gold-border purple-glow relative flex flex-col overflow-hidden rounded-3xl p-8 transition-all hover:translate-y-[-4px] md:flex-row md:items-center"
-      onClick={handleCardClick}
+      onClick={() => handleCardClick("card_click")}
     >
       {/* Rank Badge */}
       {rankInfo && (
@@ -103,7 +107,7 @@ export default function BrandCard({ brand, gclidValue, rank }: BrandCardProps) {
           className="metallic-button shimmer-effect w-full rounded-2xl py-5 text-xl font-black uppercase tracking-tighter text-[#15052d] transition-all hover:scale-105 active:scale-95"
           onClick={(e) => {
             e.stopPropagation();
-            handleCardClick();
+            handleCardClick("cta_button");
           }}
         >
           Claim Now
