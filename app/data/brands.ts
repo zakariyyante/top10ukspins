@@ -11,16 +11,6 @@ export interface Brand {
 
 export const brands: Brand[] = [
   {
-    id: "bananzia",
-    name: "Bananzia",
-    logo: "/brands/bananzia.svg",
-    rating: 9.2,
-    bonus: "300% up to £3000 + 300 FS!",
-    url: "https://bestcpa.online/click?o=510&a=75&aff_click_id=UK01ZZ",
-    isMobile: true,
-    votes: 1340,
-  },
-  {
     id: "spinyrush",
     name: "SpinyRush",
     logo: "/brands/SPINY.svg",
@@ -30,6 +20,17 @@ export const brands: Brand[] = [
     isMobile: true,
     votes: 1105,
   },
+  {
+    id: "bananzia",
+    name: "Bananzia",
+    logo: "/brands/bananzia.svg",
+    rating: 9.2,
+    bonus: "300% up to £3000 + 300 FS!",
+    url: "https://bestcpa.online/click?o=510&a=75&aff_click_id=UK01ZZ",
+    isMobile: true,
+    votes: 1340,
+  },
+  
   
   {
     id: "spinpolo",
