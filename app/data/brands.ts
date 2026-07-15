@@ -11,14 +11,14 @@ export interface Brand {
 
 export const brands: Brand[] = [
   {
-    id: "SpinShark",
-    name: "SpinShark",
-    logo: "/brands/spinshark.webp",
-    rating: 9.0,
-    bonus: "1500£ BONUS + 300FS",
-    url: "https://spinshark.site/acwxzoyqaa?subid=SpinShark-UK01ZZ&visit_id=",
+    id: "bananzia",
+    name: "Bananzia",
+    logo: "/brands/bananzia.svg",
+    rating: 9.2,
+    bonus: "300% up to 3000£ + 300FS",
+    url: "https://bestcpa.online/click?o=510&a=75&aff_click_id=UK01ZZ",
     isMobile: true,
-    votes: 1105,
+    votes: 1340,
   },
   {
     id: "spinyrush",
@@ -30,31 +30,31 @@ export const brands: Brand[] = [
     isMobile: true,
     votes: 1105,
   },
+  
   {
-    id: "bananzia",
-    name: "Bananzia",
-    logo: "/brands/bananzia.svg",
+    id: "SpinShark",
+    name: "SpinShark",
+    logo: "/brands/spinshark.webp",
+    rating: 9.0,
+    bonus: "1500£ BONUS + 300FS",
+    url: "https://spinshark.site/acwxzoyqaa?subid=SpinShark-UK01ZZ&visit_id=",
+    isMobile: true,
+    votes: 1105,
+  },
+  
+   {
+    id: "daytonaspin",
+    name: "DaytonaSpin",
+    logo: "/brands/daytonaspin.svg",
     rating: 9.2,
-    bonus: "300% up to 3000£ + 300FS",
-    url: "https://bestcpa.online/click?o=510&a=75&aff_click_id=UK01ZZ",
+    bonus: "255% Up To 4500£ + 255FS",
+    url: "https://bestcpa.online/click?o=380&a=75&aff_click_id=UK01ZZ",
     isMobile: true,
     votes: 1340,
   },
-  
-  
-  
 
   
-  // {
-  //   id: "daytonaspin",
-  //   name: "DaytonaSpin",
-  //   logo: "/brands/daytonaspin.svg",
-  //   rating: 9.2,
-  //   bonus: "255% Up To 4500£ + 255FS",
-  //   url: "https://bestcpa.online/click?o=380&a=75&aff_click_id=UK01ZZ",
-  //   isMobile: true,
-  //   votes: 1340,
-  // },
+ 
   {
     id: "grosvenor-casinos",
     name: "Grosvenor",
