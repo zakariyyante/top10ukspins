@@ -42,16 +42,16 @@ export const brands: Brand[] = [
     votes: 1105,
   },
   
-   {
-    id: "daytonaspin",
-    name: "DaytonaSpin",
-    logo: "/brands/daytonaspin.svg",
-    rating: 9.2,
-    bonus: "255% Up To 4500£ + 255FS",
-    url: "https://bestcpa.online/click?o=380&a=75&aff_click_id=UK01ZZ",
-    isMobile: true,
-    votes: 1340,
-  },
+  //  {
+  //   id: "daytonaspin",
+  //   name: "DaytonaSpin",
+  //   logo: "/brands/daytonaspin.svg",
+  //   rating: 9.2,
+  //   bonus: "255% Up To 4500£ + 255FS",
+  //   url: "https://bestcpa.online/click?o=380&a=75&aff_click_id=UK01ZZ",
+  //   isMobile: true,
+  //   votes: 1340,
+  // },
 
   
  
